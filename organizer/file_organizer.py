@@ -64,7 +64,7 @@ class FileOrganizer:
         if not files:
             print("[-] No files found in the directory.")
             return
-        print(f"[+] {len(files)} files found in the directory.")
+        print(f"[+] {len(files)} files found in the directory.\n")
 
         for item in tqdm(files, desc="File organizing: ",ncols=90):
 
