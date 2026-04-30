@@ -126,16 +126,26 @@ class FileOrganizer:
 
     def run(self):
 
-        self.display_banner()
+        while True:
 
-        print("[+] File Organizer started successfully!")
-        time.sleep(1)
-        self.load_configuration()
-        print("\n")
+            self.display_banner()
 
-        directory = input("(Enter directory path) > ")
-        time.sleep(1)
-        self.process_files(directory)
+            print("[+] File Organizer started successfully!")
+            time.sleep(1)
+            self.load_configuration()
+            print("\n")
 
-        input("\nPress Enter to exit...")
+            directory = input("(Enter directory path (type 'exit' to quit)) > ")
+
+            if directory.lower() == "exit":
+                print("Exiting File Organizer. Goodbye!")
+                break
+
+            time.sleep(1)
+            self.process_files(directory)
+
+            input("\nDo you want to organize another directory? (Press Enter to continue or type 'exit' to quit) > ")
+            if input().lower() == "exit":
+                break
+                print("Exiting File Organizer. Goodbye!")
 
